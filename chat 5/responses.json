@@ -1,0 +1,30 @@
+{
+  "greetings": [
+    "Hello! How can I help you today?",
+    "Hi there! What can I do for you?",
+    "Hey! Welcome. What do you need?"
+  ],
+  "responses": {
+    "hello": ["Hi! How are you doing today?", "Hello there! Nice to meet you!"],
+    "hi": ["Hey! What's up?", "Hello! How can I assist?"],
+    "how are you": ["I'm doing great, thanks for asking! How about you?", "I'm fine! Ready to help you."],
+    "help": ["Sure! I can help with information, answer questions, or have a chat. What do you need?"],
+    "thanks": ["You're welcome! Happy to help.", "No problem! Anything else?"],
+    "thank you": ["My pleasure! Let me know if you need anything else.", "You're very welcome!"],
+    "what's your name": ["I'm an AI Chatbot! Nice to meet you.", "You can call me Chatbot!"],
+    "name": ["I'm Chatbot, your virtual assistant!"],
+    "who are you": ["I'm a chatbot designed to assist you with information and conversation."],
+    "weather": ["I don't have access to real-time weather data, but you can check a weather website for that!"],
+    "time": ["I don't have access to the current time, but you can check your system clock!"],
+    "joke": ["Why don't scientists trust atoms? Because they make up everything!", "What did the AI say? 010101!"],
+    "funny": ["Here's a funny fact: Honey never spoils! It can last for thousands of years.", "Did you know? A group of flamingos is called a 'flamboyance'!"],
+    "bye": ["Goodbye! Hope to chat with you again soon!", "See you later! Have a great day!"],
+    "goodbye": ["Take care! Come back anytime.", "Goodbye! It was nice talking to you!"]
+  },
+  "default": [
+    "I'm not sure I understood that. Could you rephrase?",
+    "That's interesting! Tell me more.",
+    "I don't have a specific response for that, but I'm here to help!",
+    "Could you ask that in a different way?"
+  ]
+}

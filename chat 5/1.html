@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Chatbot</title>
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body>
+
+  <!-- Background Keyboard Video -->
+  <div class="background-video-container">
+    <video class="background-keyboard-video" autoplay muted loop>
+      <source src="keyboard-type-something.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- Futuristic Background Scene -->
+  <div class="background-scene">
+    <!-- Animated Sky Gradient -->
+    <div class="sky"></div>
+
+    <!-- Flying Car -->
+    <div class="flying-car">
+      <div class="car-body"></div>
+      <div class="car-window"></div>
+      <div class="car-light left"></div>
+      <div class="car-light right"></div>
+    </div>
+
+    <!-- Buildings -->
+    <div class="buildings-container">
+      <div class="building building-1"></div>
+      <div class="building building-2"></div>
+      <div class="building building-3"></div>
+      <div class="building building-4"></div>
+    </div>
+
+    <!-- Floating Particles -->
+    <div class="particles">
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+    </div>
+  </div>
+
+  <!-- Chatbot Container -->
+  <div class="chat-container">
+    <div class="chat-header">
+      <span class="header-icon">🤖</span> AI Chatbot
+    </div>
+
+    <div class="chat-box" id="chat-box">
+      <div class="bot-message">
+        <div class="video-message">
+          <video class="message-video" autoplay muted loop>
+            <source src="2025-06-23-pure-css-animated-ff-conf-logo.webm" type="video/webm">
+          </video>
+        </div>
+        Hello! Welcome to the future. How can I assist you today?
+      </div>
+    </div>
+
+    <div class="chat-input">
+      <input type="text" id="user-input" placeholder="Type a message...">
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,603 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+  padding: 20px;
+}
+
+/* Background Video Container */
+.background-video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.background-keyboard-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.25;
+  filter: brightness(0.8) contrast(1.1);
+}
+
+/* Background Scene */
+.background-scene {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  overflow: hidden;
+}
+
+.sky {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1a0033 0%, #330066 25%, #0d0d2b 50%, #1a1a4d 75%, #0d0d2b 100%);
+  animation: skyGlow 8s ease-in-out infinite;
+}
+
+@keyframes skyGlow {
+
+  0%,
+  100% {
+    filter: brightness(1) hue-rotate(0deg);
+  }
+
+  50% {
+    filter: brightness(1.2) hue-rotate(10deg);
+  }
+}
+
+/* Flying Car */
+.flying-car {
+  position: absolute;
+  width: 120px;
+  height: 60px;
+  top: 30%;
+  left: -150px;
+  z-index: 10;
+  animation: flyCar 6s linear infinite;
+}
+
+.car-body {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #00ffff 0%, #0099ff 50%, #00ffff 100%);
+  border-radius: 20px 20px 10px 10px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.8), inset -2px -2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.car-window {
+  position: absolute;
+  width: 40px;
+  height: 30px;
+  top: 10px;
+  left: 15px;
+  background: linear-gradient(45deg, #00ffff 0%, #0099ff 100%);
+  border-radius: 10px;
+  opacity: 0.7;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+}
+
+.car-light {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  top: 8px;
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.8);
+  animation: lightPulse 0.5s ease-in-out infinite;
+}
+
+.car-light.left {
+  left: 10px;
+  background: radial-gradient(circle, #ff00ff, #ff0099);
+}
+
+.car-light.right {
+  right: 10px;
+  background: radial-gradient(circle, #00ffff, #0099ff);
+}
+
+@keyframes flyCar {
+  0% {
+    left: -150px;
+    transform: translateY(0px);
+  }
+
+  25% {
+    transform: translateY(-30px);
+  }
+
+  50% {
+    transform: translateY(-60px);
+  }
+
+  75% {
+    transform: translateY(-30px);
+  }
+
+  100% {
+    left: 100vw;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes lightPulse {
+
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Buildings */
+.buildings-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40%;
+  z-index: 5;
+}
+
+.building {
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(90deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  border-top: 3px solid #00ffff;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5), inset 0 0 10px rgba(255, 0, 255, 0.2);
+  animation: buildingFloat 4s ease-in-out infinite;
+}
+
+.building-1 {
+  width: 200px;
+  height: 280px;
+  left: 5%;
+  animation-delay: 0s;
+  background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
+}
+
+.building-2 {
+  width: 180px;
+  height: 320px;
+  left: 25%;
+  animation-delay: 0.5s;
+  background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+}
+
+.building-3 {
+  width: 220px;
+  height: 260px;
+  right: 25%;
+  animation-delay: 1s;
+  background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+}
+
+.building-4 {
+  width: 190px;
+  height: 300px;
+  right: 5%;
+  animation-delay: 1.5s;
+  background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+}
+
+@keyframes buildingFloat {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Floating Particles */
+.particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, #00ffff, #00ffff);
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.8);
+  animation: float 6s infinite linear;
+}
+
+.particle:nth-child(1) {
+  left: 10%;
+  top: 20%;
+  animation-delay: 0s;
+}
+
+.particle:nth-child(2) {
+  left: 30%;
+  top: 40%;
+  animation-delay: 1s;
+}
+
+.particle:nth-child(3) {
+  left: 60%;
+  top: 25%;
+  animation-delay: 2s;
+}
+
+.particle:nth-child(4) {
+  left: 80%;
+  top: 50%;
+  animation-delay: 3s;
+}
+
+.particle:nth-child(5) {
+  left: 45%;
+  top: 60%;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-100px) translateX(20px);
+    opacity: 0;
+  }
+}
+
+/* Chat Container */
+.chat-container {
+  width: 100%;
+  max-width: 420px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  animation: fadeIn 0.5s ease-in;
+  position: relative;
+  z-index: 10;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.chat-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 16px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-icon {
+  margin-right: 10px;
+  display: inline-block;
+  animation: bounce 1.5s ease-in-out infinite;
+}
+
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.chat-box {
+  height: 400px;
+  padding: 16px;
+  overflow-y: auto;
+  background: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.chat-box div {
+  margin: 12px 0;
+  padding: 12px 14px;
+  border-radius: 10px;
+  max-width: 85%;
+  word-wrap: break-word;
+  animation: messageSlide 0.3s ease-in;
+  line-height: 1.4;
+}
+
+@keyframes messageSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.user-message {
+  background: #667eea;
+  color: white;
+  margin-left: auto;
+  border-radius: 10px 2px 10px 10px;
+}
+
+.bot-message {
+  background: #e8e8e8;
+  color: #333;
+  border-radius: 2px 10px 10px 10px;
+}
+
+/* Video in Message */
+.video-message {
+  width: 100%;
+  height: 140px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  background: #000;
+  display: block;
+}
+
+.message-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.chat-input {
+  display: flex;
+  border-top: 1px solid #e0e0e0;
+  background: white;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 12px 14px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.chat-input input::placeholder {
+  color: #999;
+}
+
+.chat-input input:focus {
+  background: #f9f9f9;
+}
+
+.chat-input button {
+  padding: 12px 18px;
+  border: none;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.chat-input button:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+.chat-input button:active {
+  transform: translateY(0);
+}
+
+/* Typing Indicator */
+.typing-indicator {
+  display: flex !important;
+  align-items: center;
+  gap: 5px;
+  padding: 12px 16px !important;
+  width: fit-content !important;
+}
+
+.typing-indicator span {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #667eea;
+  animation: typingBounce 1.2s infinite;
+}
+
+.typing-indicator span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typingBounce {
+
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+
+  30% {
+    transform: translateY(-8px);
+    opacity: 1;
+  }
+}
+
+/* Scrollbar */
+.chat-box::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-box::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+  background: #667eea;
+  border-radius: 3px;
+}
+
+.chat-box::-webkit-scrollbar-thumb:hover {
+  background: #764ba2;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  .chat-container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .chat-box {
+    height: 350px;
+  }
+
+  .chat-header {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .chat-input input {
+    font-size: 13px;
+    padding: 10px 12px;
+  }
+
+  .chat-input button {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+
+  .chat-box div {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  /* Hide background animations on small screens for better performance */
+  .flying-car {
+    display: none;
+  }
+
+  .buildings-container {
+    display: none;
+  }
+
+  .particles {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 8px;
+  }
+
+  .chat-container {
+    border-radius: 8px;
+  }
+
+  .chat-box {
+    height: 300px;
+  }
+
+  .chat-header {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .header-icon {
+    margin-right: 5px;
+    font-size: 16px;
+  }
+
+  .chat-input {
+    flex-direction: column;
+  }
+
+  .chat-input input {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .chat-input button {
+    width: 100%;
+    padding: 10px;
+    font-size: 12px;
+    border-top: 1px solid #e0e0e0;
+  }
+
+  .chat-box div {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .video-message {
+    height: 100px;
+  }
+}
